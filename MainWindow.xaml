@@ -14,19 +14,15 @@
         <Separator DockPanel.Dock="Top"/>
         <TextBlock Foreground="White" DockPanel.Dock="Top" TextWrapping="Wrap">
             This is a WPF Window with Red Background
-            It hosts a WinForms control.
+            It hosts a WinForms control with Yellow Background.
             
             Everything inside the WinForms control has Yellow Background.
             If you see Red artefacts inside the Yellow region, that's a rendering BUG
         </TextBlock>
-        
+
         <Separator DockPanel.Dock="Top"/>
-        
-        <Border DockPanel.Dock="Bottom" Background="Yellow" BorderBrush="Green" BorderThickness="4">
-            <WindowsFormsHost>
-                <winforms:TableLayoutPanel 
-                    x:Name="winformsPanel"/>
-            </WindowsFormsHost>
-        </Border>
+        <WindowsFormsHost Background="Red">
+            <winforms:NumericUpDown BackColor="Yellow"/>
+        </WindowsFormsHost>
     </DockPanel>
 </Window>

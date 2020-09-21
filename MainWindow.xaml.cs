@@ -24,23 +24,6 @@ namespace wfinterop
         {
             InitializeComponent();
             DataContext = this;
-
-            winformsPanel.Controls.Add(new System.Windows.Forms.NumericUpDown()
-            {
-                AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit,
-                AutoSize = false,
-                BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D,
-                Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left,
-                Dock = System.Windows.Forms.DockStyle.Fill
-            });
-
-            winformsPanel.Controls.Add(new System.Windows.Forms.Button() 
-            { 
-                Text = "WinForms Button",
-                AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly,
-                Dock = System.Windows.Forms.DockStyle.Fill
-            });
-
         }
 
         public string TargetFramework
