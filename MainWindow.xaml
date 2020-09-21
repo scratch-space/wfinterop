@@ -1,0 +1,32 @@
+﻿<Window x:Class="wfinterop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wfinterop"
+        xmlns:winforms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="red">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" 
+                   Foreground="WhiteSmoke" Background="Gray"
+                   Text="{Binding Path=TargetFramework, StringFormat={}TargetFramework: {0}, Mode=OneWay}" />
+        <Separator DockPanel.Dock="Top"/>
+        <TextBlock Foreground="White" DockPanel.Dock="Top" TextWrapping="Wrap">
+            This is a WPF Window with Red Background
+            It hosts a WinForms control.
+            
+            Everything inside the WinForms control has Yellow Background.
+            If you see Red artefacts inside the Yellow region, that's a rendering BUG
+        </TextBlock>
+        
+        <Separator DockPanel.Dock="Top"/>
+        
+        <Border DockPanel.Dock="Bottom" Background="Yellow" BorderBrush="Green" BorderThickness="4">
+            <WindowsFormsHost>
+                <winforms:TableLayoutPanel 
+                    x:Name="winformsPanel"/>
+            </WindowsFormsHost>
+        </Border>
+    </DockPanel>
+</Window>
